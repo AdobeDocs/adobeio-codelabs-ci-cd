@@ -37,4 +37,4 @@ Finally, the deploy GitHub action will run and deploy the Firefly App on the pro
 
 ![production](assets/production.png)   
 
-Next lesson: [Well done](welldone.md)
+Next lesson: [Custom CI/CD workflow](lesson3.md)
