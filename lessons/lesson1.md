@@ -243,7 +243,7 @@ Simply repeat the steps for your stage / production workspace.
 
 **Alternatively you can also use the CLI to retrieve these values.** 
 
-Simply run the follow commands
+Simply run the following commands:
 
 ```
 aio where // Shows you where your CLI config points to in terms of org/project/workspace
