@@ -241,5 +241,27 @@ This will download a `json` file like the following:
 Now you can copy the value of `AIO_RUNTIME_NAMESPACE_VALUE` and to `AIO_RUNTIME_AUTH_VALUE` to your GitHub secrets. 
 Simply repeat the steps for your stage / production workspace. 
 
+**Alternatively you can also use the CLI to retrieve these values.** 
+
+Simply run the follow commands
+
+```
+aio where // Shows you where your CLI config points to in terms of org/project/workspace
+
+aio console org list // List which org you can work with
+aio console org select <orgId> // Select the org you want to work with
+
+aio console project list // List which project you can work with
+aio console project select <projectid> // Select the project you want to work with
+
+aio console workspace list // List which workspace you can work with
+aio console workspace select <wkspId> // Select the workspace you want to work with
+
+aio app use -m // Merge the selected environment settings from the Developer Console into the current working environment.  
+```
+
+Then go to the `.env` file in your project and copy the values of `AIO_runtime_namespace` and `AIO_runtime_auth` into your GitHub secrets.
+Simply repeat the steps for stage / production by switching to another workspace with `aio console workspace select <wkspId>`.   
+
 
 Next lesson: [Monitoring CI/CD](lesson2.md)
