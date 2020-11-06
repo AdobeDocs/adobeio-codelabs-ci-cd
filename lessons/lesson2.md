@@ -35,6 +35,13 @@ For convenience, we'll go to `https://github.com/<org>/<project_name>/releases/n
 
 Finally, the deploy GitHub action will run and deploy the Firefly App on the production environment using the production GitHub secrets.
 
-![production](assets/production.png)   
+![production](assets/production.png)
 
-Next lesson: [Well done](welldone.md)
+### Debugging jobs
+
+GitHub Actions provide cloud based CI/CD features and therefore you can't debug jobs locally.
+Fortunately, GitHub provides tools to help you debug failing jobs.
+
+Please find more information on how to view run logs, enable verbose logs and more on the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/actions/managing-workflow-runs).   
+
+Next lesson: [Custom CI/CD workflow](lesson3.md)

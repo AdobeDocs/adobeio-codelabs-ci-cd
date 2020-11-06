@@ -191,8 +191,77 @@ If you can't add secrets to the repository, the reason could be that:
 * You don't have admin access for an organization repository.
 * You don't have write access to the repository if you're using the [GitHub Actions secrets API](https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository)
 
-**The secrets value can be retrieved in the [Developer Console](https://console.adobe.io/)** from where you can download the stage and production namespace and credential. 
+**The secrets value can be retrieved in the [Developer Console](https://console.adobe.io/)** from where you can download the stage and production namespace and credential.
 
 ![developer-console](assets/developer-console.png)  
+
+Follow these steps to retrieve the value for the secrets `AIO_RUNTIME_NAMESPACE_STAGE`, `AIO_RUNTIME_AUTH_STAGE` and `AIO_RUNTIME_NAMESPACE_PROD`, `AIO_RUNTIME_AUTH_PRD`: 
+
+1. Go to the [Developer Console](https://console.adobe.io/)
+2. Select the right org, project and workspace. 
+3. Click on the Download all button on the top right. 
+
+This will download a `json` file like the following:
+
+```
+{
+    "project": {
+        "id": "...",
+        "name": "...",
+        "title": "...",
+        "org": {
+            "id": "...",
+            "name": "...",
+            "ims_org_id": "..."
+        },
+        "workspace": {
+            "id": "...",
+            "name": "...",
+            "title": "...",
+            "description": "...",
+            "action_url": "...",
+            "app_url": "...",
+            "details": {
+                "credentials": [],
+                "services": [],
+                "runtime": {
+                    "namespaces": [
+                        {
+                            "name": AIO_RUNTIME_NAMESPACE_VALUE,
+                            "auth": AIO_RUNTIME_AUTH_VALUE
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+```
+
+Now you can copy the value of `AIO_RUNTIME_NAMESPACE_VALUE` and to `AIO_RUNTIME_AUTH_VALUE` to your GitHub secrets. 
+Simply repeat the steps for your stage / production workspace. 
+
+**Alternatively you can also use the CLI to retrieve these values.** 
+
+Simply run the following commands:
+
+```
+aio where // Shows you where your CLI config points to in terms of org/project/workspace
+
+aio console org list // List which org you can work with
+aio console org select <orgId> // Select the org you want to work with
+
+aio console project list // List which project you can work with
+aio console project select <projectid> // Select the project you want to work with
+
+aio console workspace list // List which workspace you can work with
+aio console workspace select <wkspId> // Select the workspace you want to work with
+
+aio app use -m // Merge the selected environment settings from the Developer Console into the current working environment.  
+```
+
+Then go to the `.env` file in your project and copy the values of `AIO_runtime_namespace` and `AIO_runtime_auth` into your GitHub secrets.
+Simply repeat the steps for stage / production by switching to another workspace with `aio console workspace select <wkspId>`.   
+
 
 Next lesson: [Monitoring CI/CD](lesson2.md)

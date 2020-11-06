@@ -14,6 +14,9 @@
     "title": "Lesson 2: Monitoring CI/CD",
     "url": "/lessons/lesson2"
   }, {
+    "title": "Lesson 3: Custom CI/CD workflow",
+    "url": "/lessons/lesson3"
+  }, {
     "title": "Well done",
     "url": "/lessons/welldone"
   }]
