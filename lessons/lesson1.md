@@ -36,7 +36,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: ['12']
+        node-version: ['14']
         os: [macOS-latest, ubuntu-latest, windows-latest]
     steps:
       - name: Checkout
@@ -81,7 +81,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        node-version: ['12']
+        node-version: ['14']
         os: [ubuntu-latest]
     steps:
       - name: Checkout
@@ -126,7 +126,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        node-version: ['12']
+        node-version: ['14']
         os: [ubuntu-latest]
     steps:
       - name: Checkout

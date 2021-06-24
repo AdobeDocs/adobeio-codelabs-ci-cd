@@ -16,7 +16,7 @@ packages:
       generic:
         function: actions/generic/index.js
         web: 'yes'
-        runtime: 'nodejs:12'
+        runtime: 'nodejs:14'
         inputs:
           LOG_LEVEL: debug
           my_value_1: $MY_ENV_VALUE_1
